@@ -1,12 +1,12 @@
 package assignment5;
+
+import java.util.Iterator;
+
 //Animesh Jain G01043755 SWE619 Assignment5 
-//Problem 1: Modification to existing File, Test cases in TreeTest.java
+//Problem 2: Implementing the given tree using Iterator
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
-class Tree {
-
+public class TreeIterator implements Iterable<TreeIterator> {
+	
 	/*
 	 * Overview: Tree class containing left subtree, right subtree and root of
 	 * the tree. Type also provides the implementation of in-order traversal
@@ -19,7 +19,7 @@ class Tree {
 	public Tree mRight; // Right Subtree
 
 	// Constructor/Initializer
-	public Tree(int val) {
+	public TreeIterator(int val) {
 		// Requires:Root of the tree.
 		// Modifies:this.
 		// Effects: adds the given value as root of this, initializes this.
@@ -74,41 +74,16 @@ class Tree {
 			return false;
 	}
 
-	// Main method to test the implementation
-	public static void main(String[] args) {
-		// Requires:
-		// Modifies:
-		// Effects:
-		try {
-			Tree t = new Tree(8);
-			Scanner scanner = new Scanner(System.in);
-			//boolean continueLoop = true; // determines if more input is needed
-			for (int i = 1; i < 9; ++i) {
-				try // read
-				{
-					System.out.print("Please enter a random integer : ");
-					int stackInt = scanner.nextInt();
-					t.add(Integer.valueOf(stackInt));
-				} // end try
-				catch (InputMismatchException inputMismatchException) {
-					// Known Input Mismatch Exception
-					System.err.printf("\nException: %s\n", inputMismatchException);
-					scanner.nextLine(); // discard input so user can try again
-					System.out.println("You must enter integers. Please try again.\n");
-				} catch (Exception unknownException) { // unknown Exception
-					System.err.println("Exeption: " + unknownException.getMessage());
-					System.out.println("Some problem with your input");
-					scanner.nextLine(); // discard input so user can try again
-				} // end catch
-			}
-
-			System.out.println("Values in order = " + t.inOrder());
-			scanner.close();
-		} catch (StackOverflowError e) {
-			System.out.println("Tree too big, Stack over flow : " + e.getMessage());
-		} catch (Exception unknown) {
-			System.out.println("Unexcpected Exception encountered");
-			System.out.println(" " + unknown.getMessage());
-		}
+	@Override
+	public Iterator<TreeIterator> iterator() {
+		// TODO Auto-generated method stub
+		return null;// object of iterable inner class
+		
+		//inner class having iterator implementation , having next , hasNext and constructor
+		//implement the inorder using the same.
 	}
+
+	
+	
+
 }
