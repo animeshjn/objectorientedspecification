@@ -74,14 +74,26 @@ public class TreeIterator implements Iterable<TreeIterator> {
 			return false;
 	}
 
-	@Override
 	public Iterator<TreeIterator> iterator() {
 		// TODO Auto-generated method stub
-		return null;// object of iterable inner class
-		
-		//inner class having iterator implementation , having next , hasNext and constructor
-		//implement the inorder using the same.
+		return null;
 	}
+
+	class TreeIterable{
+		
+		
+	}
+	
+	
+	
+//
+//	public Iterator iterator() {
+//		// TODO Auto-generated method stub
+//		return null;// object of iterable inner class
+//		
+//		//inner class having iterator implementation , having next , hasNext and constructor
+//		//implement the inorder using the same.
+//	}
 
 	
 	
